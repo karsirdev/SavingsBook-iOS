@@ -32,7 +32,6 @@
 |:---:|:---:|
 | <img src="Screenshots/welcome-dark.png" width="180"/> | <img src="Screenshots/login-dark.png" width="180"/> |
 
-> 💡 Export ảnh từ Figma → đặt vào folder `Screenshots/` với đúng tên file trên là ảnh tự hiện.
 
 ---
 
