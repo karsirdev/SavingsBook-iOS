@@ -25,12 +25,12 @@
 ### Light Mode
 | Welcome | Login | Register |
 |:---:|:---:|:---:|
-| <img src="Screenshots/welcome-light.png" width="180"/> | <img src="Screenshots/login-light.png" width="180"/> | <img src="Screenshots/register-light.png" width="180"/> |
+| <img src="Screenshots/WELCOME - LIGHT.png" width="180"/> | <img src="Screenshots/LOGIN LIGHT - iOS.png" width="180"/> | <img src="Screenshots/register-light.png" width="180"/> |
 
 ### Dark Mode
 | Welcome | Login |
 |:---:|:---:|
-| <img src="Screenshots/welcome-dark.png" width="180"/> | <img src="Screenshots/login-dark.png" width="180"/> |
+| <img src="Screenshots/WELCOME - DARK.png" width="180"/> | <img src="Screenshots/LOGIN DARK - iOS.png" width="180"/> |
 
 
 ---
