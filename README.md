@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F5A725,100:FFF0B0&height=140&section=header&text=SavingsBook&fontSize=48&fontColor=2D1A00&fontAlignY=45&desc=Personal%20Savings%20Tracker%20for%20iOS&descAlignY=68&descSize=16&descColor=2D1A00" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F5A725,100:FFF0B0&height=140&section=header&text=SavingsBook&fontSize=48&fontColor=FFFFFF&fontAlignY=45&desc=Personal%20Savings%20Tracker%20for%20iOS&descAlignY=68&descSize=16&descColor=FFFFFF" width="100%"/>
 
 <br/>
 
