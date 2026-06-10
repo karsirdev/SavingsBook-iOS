@@ -6,7 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CBE4ECE42FD8F99600519D3A /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4ECE32FD8F99600519D3A /* Color+App.swift */; };
+		CBE4ECE62FD8F9DE00519D3A /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4ECE52FD8F9DE00519D3A /* Font+App.swift */; };
+		CBE4ECE82FD8FA2C00519D3A /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4ECE72FD8FA2C00519D3A /* PrimaryButton.swift */; };
+		CBE4ECEB2FD8FB2200519D3A /* SBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4ECEA2FD8FB2200519D3A /* SBTextField.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		CBE4ECE32FD8F99600519D3A /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
+		CBE4ECE52FD8F9DE00519D3A /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
+		CBE4ECE72FD8FA2C00519D3A /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		CBE4ECEA2FD8FB2200519D3A /* SBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTextField.swift; sourceTree = "<group>"; };
 		CBFB656A2FD868F900B32C89 /* SavingsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SavingsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,9 +40,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CBC258C12FD8F88000196216 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CBE4ECE92FD8FAF100519D3A /* Components */,
+				CBE4ECE22FD8F94700519D3A /* Theme */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CBE4ECE22FD8F94700519D3A /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				CBE4ECE32FD8F99600519D3A /* Color+App.swift */,
+				CBE4ECE52FD8F9DE00519D3A /* Font+App.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		CBE4ECE92FD8FAF100519D3A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CBE4ECE72FD8FA2C00519D3A /* PrimaryButton.swift */,
+				CBE4ECEA2FD8FB2200519D3A /* SBTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		CBFB65612FD868F900B32C89 = {
 			isa = PBXGroup;
 			children = (
+				CBC258C12FD8F88000196216 /* Core */,
 				CBFB656C2FD868F900B32C89 /* SavingsBook */,
 				CBFB656B2FD868F900B32C89 /* Products */,
 			);
@@ -119,6 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE4ECE42FD8F99600519D3A /* Color+App.swift in Sources */,
+				CBE4ECE82FD8FA2C00519D3A /* PrimaryButton.swift in Sources */,
+				CBE4ECE62FD8F9DE00519D3A /* Font+App.swift in Sources */,
+				CBE4ECEB2FD8FB2200519D3A /* SBTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
