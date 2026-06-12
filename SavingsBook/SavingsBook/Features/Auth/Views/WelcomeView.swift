@@ -19,7 +19,7 @@ struct WelcomeView: View {
                     Spacer()
 
                     // MARK: - Logo
-                    VStack(spacing: 20) {
+                    VStack(spacing: 7) {
                         Image("AppIcon")
                             .resizable()
                             .frame(width: 120, height: 120)
