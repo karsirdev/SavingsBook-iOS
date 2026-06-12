@@ -20,7 +20,7 @@ struct WelcomeView: View {
 
                     // MARK: - Logo
                     VStack(spacing: 7) {
-                        Image("AppIcon")
+                        Image("LightIcon")
                             .resizable()
                             .frame(width: 120, height: 120)
                             .clipShape(RoundedRectangle(cornerRadius: 28))
