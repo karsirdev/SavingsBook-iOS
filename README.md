@@ -12,9 +12,9 @@
 
 <br/>
 
-> *Ứng dụng quản lý tiết kiệm cá nhân — đơn giản, đẹp, và thực sự hữu ích.*
+> *Ứng dụng quản lý tài chính cá nhân toàn diện — theo dõi tiết kiệm, chi tiêu, khoản vay và số dư ngân hàng trong một nơi duy nhất.*
 >
-> *A clean, native iOS app for tracking personal savings goals.*
+> *A comprehensive personal finance app — savings goals, expense tracking, loan management, and bank integration in one place.*
 
 </div>
 
@@ -32,20 +32,76 @@
 |:---:|:---:|
 | <img src="Screenshots/WELCOME - DARK.png" width="180"/> | <img src="Screenshots/LOGIN DARK - iOS.png" width="180"/> |
 
+---
+
+## 💡 About / Giới thiệu
+
+**SavingsBook** là ứng dụng quản lý tài chính cá nhân được thiết kế để giúp người dùng nắm rõ toàn bộ bức tranh tài chính của mình — từ các khoản tiết kiệm ngân hàng, mục tiêu tiết kiệm cá nhân, đến chi tiêu hàng ngày và các khoản vay đang có.
+
+Thay vì phải mở nhiều app ngân hàng khác nhau hoặc ghi chép thủ công, SavingsBook tập hợp tất cả vào một nơi duy nhất, trực quan và dễ sử dụng.
 
 ---
 
 ## ✨ Features / Tính năng
 
-**Hiện tại (v0.1)**
+### 🏦 Tiết kiệm ngân hàng
+- Liên kết với tài khoản ngân hàng để theo dõi các khoản tiết kiệm đang gửi
+- Xem số dư, kỳ hạn, lãi suất của từng khoản tiết kiệm
+- Theo dõi lãi suất các ngân hàng hàng tháng để so sánh và lựa chọn
+
+### 🎯 Mục tiêu tiết kiệm cá nhân
+- Tự tạo mục tiêu tiết kiệm cá nhân (du lịch, mua điện thoại, học phí...)
+- Đặt số tiền mục tiêu và thời hạn hoàn thành
+- Theo dõi tiến trình bằng biểu đồ trực quan
+- Nhận thông báo nhắc nhở nạp tiền định kỳ
+
+### 💳 Quản lý số dư ngân hàng
+- Xem số dư tất cả tài khoản ngân hàng đã liên kết trong một màn hình
+- Cập nhật số dư theo thời gian thực
+
+### 💸 Quản lý thu chi hàng ngày
+- Ghi lại thu nhập và chi tiêu trong ngày
+- Phân loại chi tiêu theo danh mục (ăn uống, di chuyển, mua sắm...)
+- Xem tổng quan chi tiêu trong ngày / tuần / tháng
+- Lịch sử chi tiêu chi tiết theo thời gian
+
+### 📊 Khoản vay
+- Theo dõi các khoản vay đang có
+- Xem thời hạn còn lại, số tiền lãi và gốc còn phải trả
+- Lịch trả nợ hàng tháng
+
+---
+
+## 🗺 Roadmap
+
+**v0.1 — Auth (Đang làm)**
 - [x] Welcome screen với gradient design
 - [x] Dual-theme system — Light (vàng) & Dark (tím)
-- [x] Login & Register screen
-- [ ] Màn hình Home — tổng quan tiết kiệm
-- [ ] Thêm / sửa / xoá mục tiêu tiết kiệm
-- [ ] Biểu đồ tiến trình
+- [x] Login screen
+- [x] Register screen
+
+**v0.2 — Home & Savings Goals**
+- [ ] Màn hình Home — tổng quan tài chính
+- [ ] Tạo / sửa / xoá mục tiêu tiết kiệm cá nhân
+- [ ] Biểu đồ tiến trình mục tiêu
 - [ ] Local storage với SwiftData
-- [ ] Thông báo nhắc nhở
+
+**v0.3 — Expense Tracking**
+- [ ] Ghi thu chi hàng ngày
+- [ ] Phân loại chi tiêu theo danh mục
+- [ ] Lịch sử chi tiêu
+- [ ] Báo cáo tuần / tháng
+
+**v0.4 — Bank Integration**
+- [ ] Liên kết tài khoản ngân hàng
+- [ ] Xem số dư các ngân hàng
+- [ ] Theo dõi lãi suất tiết kiệm
+- [ ] Đồng bộ khoản tiết kiệm ngân hàng
+
+**v0.5 — Loan Management**
+- [ ] Quản lý khoản vay
+- [ ] Lịch trả nợ hàng tháng
+- [ ] Thông báo nhắc trả nợ
 
 ---
 
@@ -66,23 +122,32 @@ SavingsBook/
 │   ├── Home/
 │   │   ├── Views/
 │   │   └── ViewModels/
-│   └── Savings/
-│       ├── Views/
+│   ├── Savings/
+│   │   ├── Views/              # SavingGoalList, AddGoal, GoalDetail
+│   │   └── ViewModels/
+│   ├── Expenses/
+│   │   ├── Views/              # DailyExpense, History, Report
+│   │   └── ViewModels/
+│   ├── Bank/
+│   │   ├── Views/              # LinkedBanks, Balance, InterestRate
+│   │   └── ViewModels/
+│   └── Loans/
+│       ├── Views/              # LoanList, LoanDetail, Schedule
 │       └── ViewModels/
 │
 ├── Data/                       # Tầng dữ liệu
-│   ├── Models/                 # User, SavingGoal
-│   ├── Repositories/           # SavingRepository, AuthRepository
+│   ├── Models/                 # User, SavingGoal, Expense, Loan, Bank
+│   ├── Repositories/
 │   └── Persistence/            # SwiftData container
 │
 ├── Core/                       # Dùng chung toàn app
 │   ├── Components/             # PrimaryButton, SBTextField
 │   ├── Theme/                  # Color+App, Font+App
 │   ├── Utils/                  # DateFormatter, CurrencyFormatter
-│   └── Extensions/             # View+Extensions, Color+Extensions
+│   └── Extensions/
 │
 └── Resources/
-    ├── Assets.xcassets          # Color sets, images
+    ├── Assets.xcassets
     └── Localizable.strings
 ```
 
