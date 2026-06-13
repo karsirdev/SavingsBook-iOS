@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
     @State private var isPasswordVisibe = false
+    @State private var viewModel = AuthViewModel()
     var body: some View {
         ZStack {
             Color .sbBackground
@@ -40,7 +39,7 @@ struct LoginView: View {
                     VStack(spacing: 8) {
                         SBTextField(
                             placeholder: "Email / Số điện thoại",
-                            text: $email,
+                            text: $viewModel.email,
                             icon: "envelope"
                         )
                         
@@ -49,9 +48,9 @@ struct LoginView: View {
                                 .foregroundStyle(Color.SBTextSecondary)
                             
                             if isPasswordVisibe {
-                                TextField("Mật khẩu", text: $password)
+                                TextField("Mật khẩu", text: $viewModel.password)
                             } else {
-                                SecureField("Mật khẩu", text: $password)
+                                SecureField("Mật khẩu", text: $viewModel.password)
                             }
                             
                             Button {
@@ -78,7 +77,11 @@ struct LoginView: View {
                     .padding(.horizontal, 24)
                     
                     VStack(spacing: 16) {
-                        PrimaryButton(title: "Đăng nhập") { }
+                        PrimaryButton(
+                            title: "Đăng Nhập",
+                            action: { viewModel.login() },
+                            isLoading: viewModel.isLoading
+                        )
                             .padding(.horizontal, 24)
                         
                         HStack {

@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var fullName = ""
-    @State private var email = ""
-    @State private var phone = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
     @State private var isPasswordVisible = false
     @State private var isConfirmPasswordVisible = false
     @State private var navigateToLogin = false
+    @State private var viewModel = AuthViewModel()
     var body: some View {
         ZStack {
             Color.SBBackground
@@ -39,43 +35,46 @@ struct RegisterView: View {
                     VStack(spacing: 14) {
                         SBTextField(
                             placeholder: "Họ và tên",
-                            text: $fullName,
+                            text: $viewModel.fullName,
                             icon: "person"
                         )
                         
                         SBTextField(
                             placeholder: "Email",
-                            text: $email,
+                            text: $viewModel.email,
                             icon: "envelope"
                         )
                         
                         SBTextField(
                             placeholder: "Số điện thoại",
-                            text: $phone,
+                            text: $viewModel.phone,
                             icon: "phone"
                         )
                         
                         PasswordField(
                             placeholder: "Mật khẩu",
-                            text: $password,
+                            text: $viewModel.password,
                             isVisible: $isPasswordVisible
                         )
                         
                         PasswordField(
                             placeholder: "Nhập lại mật khẩu",
-                            text: $confirmPassword,
+                            text: $viewModel.confirmPassword,
                             isVisible: $isConfirmPasswordVisible
                        )
                     }
                     .padding(.horizontal, 24)
                     
                     VStack(spacing: 16){
-                        PrimaryButton(title: "Đăng ký") {
-                            navigateToLogin = true
-                        }
-                        .navigationDestination(isPresented: $navigateToLogin) {
-                            LoginView()
-                        }
+                        PrimaryButton(
+                            title: "Đăng ký",
+                            action: {
+                                viewModel.register()
+                                navigateToLogin = true
+                            },
+                            isLoading: viewModel.isLoading
+                        )
+                        .navigationDestination(isPresented: $navigateToLogin) { LoginView() }
                         
                         HStack(spacing: 4) {
                             Text("Đã có tài khoản?")
