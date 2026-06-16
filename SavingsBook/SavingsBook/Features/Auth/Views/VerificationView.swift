@@ -13,8 +13,6 @@ struct VerificationView: View {
     @Environment(\.dismiss) private var dismiss
     
     let email: String
-    
-    // 6 ô OTP riêng biệt
     @State private var otpDigits: [String] = Array(repeating: "", count: 6)
     @FocusState private var focusedIndex: Int?
     
@@ -122,30 +120,27 @@ struct VerificationView: View {
         .onAppear {
             focusedIndex = 0
         }
-        // Navigate sang Home khi xác minh thành công
         .onChange(of: authVM.isAuthenticated) { _, verified in
             if verified {
-                // Handle navigation ở ContentView hoặc NavigationStack root
+            
             }
         }
         .animation(.easeInOut(duration: 0.2), value: authVM.errorMessage)
     }
     
-    // MARK: - Input Logic
     private func handleInput(_ value: String, at index: Int) {
-        // Chỉ giữ 1 ký tự số
+
         let filtered = value.filter { $0.isNumber }.prefix(1)
         otpDigits[index] = String(filtered)
-        
-        // Sync về authVM
+
         authVM.verificationCode = otpDigits.joined()
         
         if !filtered.isEmpty {
-            // Tự động nhảy sang ô tiếp theo
+            
             if index < 5 {
                 focusedIndex = index + 1
             } else {
-                focusedIndex = nil // Ẩn keyboard khi điền xong
+                focusedIndex = nil
             }
         }
     }
