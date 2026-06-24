@@ -119,6 +119,9 @@ struct LoginView: View {
             }
         }
         .navigationBarBackButtonHidden(false)
+        .navigationDestination(isPresented: $viewModel.loginSucceeded) {
+            VerificationView(email: viewModel.email)
+        }
     }
     
     struct SocialButton: View {

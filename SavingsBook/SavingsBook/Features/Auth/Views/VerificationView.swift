@@ -173,7 +173,7 @@ struct OTPDigitField: View {
 }
 #Preview {
     NavigationStack {
-        VerificationView(email: "test@gmail.com")
+        VerificationView(email: "nguyencaovu2007@gmail.com")
             .environment(AuthViewModel())
     }
 }

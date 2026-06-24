@@ -26,6 +26,7 @@ class AuthViewModel {
     var countdown = 60
     var isVerified = false
     var isAuthenticated = false
+    var loginSucceeded = false
     
     private var mockOTPCode = ""
     private var pendingEmail = ""
@@ -60,7 +61,12 @@ class AuthViewModel {
         }
         isLoading = true
         print("Đăng nhập với \(email)")
+        
+        sendVerificationEmail(to: email)
+        loginSucceeded = true
+        isLoading = false
     }
+    
     func register() {
         guard isRegisterFormValid else {
             errorMessage = "Vui lòng kiểm tra lại thông tin"
